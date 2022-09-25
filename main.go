@@ -7,11 +7,10 @@ import (
 	"context"
 	"fmt"
 	"github.com/aws/aws-sdk-go-v2/service/secretsmanager"
-
-	"github.com/mchirico/go-secretsmanager/common"
-	"github.com/mchirico/go-secretsmanager/config"
-
 	"github.com/google/uuid"
+
+	"github.com/cwxstat/go-secretsmanager/common"
+	"github.com/cwxstat/go-secretsmanager/config"
 )
 
 func main() {
@@ -26,7 +25,7 @@ func main() {
 		panic("Couldn't load config!")
 	}
 
-	secretName = uuid.NewString()
+	secretName = "MySecretName" + uuid.NewString()
 	value = "s00pers33kr1t"
 
 	conn := secretsmanager.NewFromConfig(cfg)

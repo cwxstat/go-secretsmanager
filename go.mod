@@ -1,4 +1,4 @@
-module github.com/mchirico/go-secretsmanager
+module github.com/cwxstat/go-secretsmanager
 
 go 1.19
 

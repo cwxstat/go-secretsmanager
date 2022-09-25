@@ -33,7 +33,7 @@ func TestGetSecret(t *testing.T) {
 					return &secretsmanager.GetSecretValueOutput{
 						ARN:          aws.String("arn:aws:secretsmanager:us-west-2:123456789012:secret:example-123456"),
 						Name:         aws.String("example"),
-						SecretString: aws.String("example"),
+						SecretString: aws.String("my secret ....pss..."),
 					}, nil
 				})
 			},
@@ -43,9 +43,12 @@ func TestGetSecret(t *testing.T) {
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
 			ctx := context.TODO()
-			_, err := GetSecret(ctx, c.client(t), "example")
+			secret, err := GetSecret(ctx, c.client(t), "example")
 			if err != nil {
 				t.Errorf("expected no error, got %v", err)
+			}
+			if e, a := "my secret ....pss...", secret; e != a {
+				t.Errorf("expected %v, got %v", e, a)
 			}
 		})
 	}
