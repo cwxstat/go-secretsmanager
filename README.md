@@ -1,4 +1,5 @@
-[![Go](https://github.com/cwxstat/go-secretsmanager/actions/workflows/go.yml/badge.svg)](https://github.com/cwxstat/go-secretsmanager/actions/workflows/go.yml)
+[![Go](https://github.com/cwxstat/go-secretsmanager/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/cwxstat/go-secretsmanager/actions/workflows/go.yml)
+
 # go-secretsmanager
 
 ## Summary:
